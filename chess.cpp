@@ -39,7 +39,6 @@ int main() {
         cout << "Error! Two pieces have the same coordinates!";
         exit(1);
     } 
-    cout << int('c') - int('a');
     bool rook = rook_threat(king_pos, rook_pos, bishop_pos);
     bool bishop = bishop_threat(king_pos, bishop_pos, rook_pos);
     if (rook) 
