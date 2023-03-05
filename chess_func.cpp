@@ -7,9 +7,8 @@ bool bishop_threat(char king_pos[3], char bishop_pos[3], char rook_pos[3]) { //r
     bool check = false;
     if (abs(int(king_pos[0]) - int(bishop_pos[0])) == abs(int(king_pos[1]) - int(bishop_pos[1])))
     {
-        if (abs(int(rook_pos[0]) - int(bishop_pos[0])) != abs(int(rook_pos[1]) - int(bishop_pos[1])) )
-        
-        check = true;
+        if (abs(int(rook_pos[0]) - int(bishop_pos[0])) != abs(int(rook_pos[1]) - int(bishop_pos[1])) || int(bishop_pos[1]) < int(rook_pos[1]) && int(bishop_pos[1]) < int(king_pos[1]) || int(bishop_pos[1]) > int(rook_pos[1]) && int(bishop_pos[1]) > int(king_pos[1]))
+            check = true;
     }
         
     return check;
