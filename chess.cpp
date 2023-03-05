@@ -34,9 +34,16 @@ int main() {
         cout << "Error! Incorrect format of the entered data!\n";
         exit(1);
     }
-    bool rook = rook_threat(king_pos, rook_pos);
-    bool bishop = bishop_threat(king_pos, bishop_pos);
-    if (rook) {
+    if (king_pos[0] == rook_pos[0] && king_pos[1] == rook_pos[1] || king_pos[0] == bishop_pos[0] && king_pos[1] == bishop_pos[1] || bishop_pos[0] == rook_pos[0] && bishop_pos[1] == rook_pos[1])
+    {
+        cout << "Error! Two pieces have the same coordinates!";
+        exit(1);
+    } 
+    cout << int('c') - int('a');
+    bool rook = rook_threat(king_pos, rook_pos, bishop_pos);
+    bool bishop = bishop_threat(king_pos, bishop_pos, rook_pos);
+    if (rook) 
+    {
         if (bishop)
             cout << "Error! Check from two pieces at the same time!";
         else
